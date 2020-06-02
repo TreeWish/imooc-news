@@ -1,0 +1,1 @@
+<view class="scroll"><scroll-view class="scroll-list" scroll-y="{{true}}"><view><block wx:for="{{5}}" wx:for-item="item" wx:for-index="__i0__"><block wx:if="{{$slots.default}}"><slot></slot></block><block wx:else>{{item}}</block></block></view></scroll-view></view>

@@ -1,0 +1,1 @@
+<view><view class="listcard"><view class="card-img"><image src="/static/logo.png" mode="aspectFill"></image></view><view class="card-content"><view class="card-title"><text>uni app</text></view><view class="card-desc"><view class="card-label">前端</view><view class="card-reader">100浏览人数</view></view></view></view></view>
