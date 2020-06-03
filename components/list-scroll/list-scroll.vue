@@ -2,7 +2,7 @@
   <view class="scroll">
     <scroll-view scroll-y class="scroll-list">
       <view>
-        <slot v-for="item in 5">{{item}}</slot>
+        <slot></slot>
       </view>
     </scroll-view>
   </view>

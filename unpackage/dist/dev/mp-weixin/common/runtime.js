@@ -104,11 +104,11 @@
 /******/
 /******/
 /******/ 		// mini-css-extract-plugin CSS loading
-/******/ 		var cssChunks = {"components/list-card/list-card":1,"components/list-scroll/list-scroll":1,"components/navbar/navbar":1,"components/tab/tab":1,"components/uni-icons/uni-icons":1};
+/******/ 		var cssChunks = {"components/list/list":1,"components/navbar/navbar":1,"components/tab/tab":1,"components/list/list-item":1,"components/uni-icons/uni-icons":1,"components/list-card/list-card":1,"components/list-scroll/list-scroll":1};
 /******/ 		if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
 /******/ 		else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
 /******/ 			promises.push(installedCssChunks[chunkId] = new Promise(function(resolve, reject) {
-/******/ 				var href = "" + ({"components/list-card/list-card":"components/list-card/list-card","components/list-scroll/list-scroll":"components/list-scroll/list-scroll","components/navbar/navbar":"components/navbar/navbar","components/tab/tab":"components/tab/tab","components/uni-icons/uni-icons":"components/uni-icons/uni-icons"}[chunkId]||chunkId) + ".wxss";
+/******/ 				var href = "" + ({"components/list/list":"components/list/list","components/navbar/navbar":"components/navbar/navbar","components/tab/tab":"components/tab/tab","components/list/list-item":"components/list/list-item","components/uni-icons/uni-icons":"components/uni-icons/uni-icons","components/list-card/list-card":"components/list-card/list-card","components/list-scroll/list-scroll":"components/list-scroll/list-scroll"}[chunkId]||chunkId) + ".wxss";
 /******/ 				var fullhref = __webpack_require__.p + href;
 /******/ 				var existingLinkTags = document.getElementsByTagName("link");
 /******/ 				for(var i = 0; i < existingLinkTags.length; i++) {

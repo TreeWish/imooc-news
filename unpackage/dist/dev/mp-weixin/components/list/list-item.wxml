@@ -1,0 +1,1 @@
+<list-scroll class="list-scroll" vue-id="741e725a-1" bind:__l="__l" vue-slots="{{['default']}}"><block wx:for="{{list}}" wx:for-item="item" wx:for-index="__i0__" wx:key="_id"><list-card vue-id="{{('741e725a-2-'+__i0__)+','+('741e725a-1')}}" item="{{item}}" bind:__l="__l"></list-card></block></list-scroll>

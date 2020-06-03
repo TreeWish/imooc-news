@@ -132,13 +132,22 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 var _default =
 {
   props: {
-    list: Array },
+    list: Array,
+    tabIndex: {
+      type: Number,
+      default: 0 } },
+
 
   data: function data() {
     return {
       activeIndex: 0 };
 
   },
+  watch: {
+    tabIndex: function tabIndex(newVal) {
+      this.activeIndex = newVal;
+    } },
+
   methods: {
     changeTab: function changeTab(item, index) {
       this.activeIndex = index;

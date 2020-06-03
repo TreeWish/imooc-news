@@ -111,11 +111,8 @@ var components = {
   tab: function() {
     return __webpack_require__.e(/*! import() | components/tab/tab */ "components/tab/tab").then(__webpack_require__.bind(null, /*! @/components/tab/tab.vue */ 46))
   },
-  listScroll: function() {
-    return __webpack_require__.e(/*! import() | components/list-scroll/list-scroll */ "components/list-scroll/list-scroll").then(__webpack_require__.bind(null, /*! @/components/list-scroll/list-scroll.vue */ 53))
-  },
-  listCard: function() {
-    return __webpack_require__.e(/*! import() | components/list-card/list-card */ "components/list-card/list-card").then(__webpack_require__.bind(null, /*! @/components/list-card/list-card.vue */ 60))
+  list: function() {
+    return __webpack_require__.e(/*! import() | components/list/list */ "components/list/list").then(__webpack_require__.bind(null, /*! @/components/list/list.vue */ 80))
   }
 }
 var render = function() {
@@ -166,14 +163,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 //
 //
 //
-//
-//
 
 // easyCom 如果组件命名格式：组件名/组件名 无需import 和 components注册
 var _default = {
   data: function data() {
     return {
-      labelList: [] };
+      labelList: [],
+      activeIndex: 0,
+      tabIndex: 0 };
 
   },
   onLoad: function onLoad() {
@@ -182,9 +179,19 @@ var _default = {
   methods: {
     getLabel: function getLabel() {var _this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var _yield$_this$$api$get, data;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:_context.next = 2;return (
                   _this.$api.getLabel());case 2:_yield$_this$$api$get = _context.sent;data = _yield$_this$$api$get.data;
-                _this.labelList = data;case 5:case "end":return _context.stop();}}}, _callee);}))();
+                // 向数组的开头添加一个或更多元素,并返回新的长度
+                data.unshift({
+                  name: '全部' });
+
+                _this.labelList = data;case 6:case "end":return _context.stop();}}}, _callee);}))();
     },
-    tab: function tab(data) {} } };exports.default = _default;
+    tab: function tab(data) {
+      this.activeIndex = data.index;
+    },
+    change: function change(cur) {
+      this.tabIndex = cur;
+
+    } } };exports.default = _default;
 
 /***/ }),
 /* 22 */,

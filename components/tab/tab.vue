@@ -12,19 +12,28 @@
 <script>
 export default {
   props: {
-    list: Array
+    list: Array,
+    tabIndex: {
+      type: Number,
+      default: 0
+    }
   },
   data() {
     return {
       activeIndex: 0
     };
   },
+  watch: {
+    tabIndex(newVal) {
+      this.activeIndex = newVal;
+    }
+  },
   methods: {
     changeTab(item, index) {
       this.activeIndex = index;
       this.$emit('tab', {
         data: item,
-        index
+        index: index
       })
     }
   }

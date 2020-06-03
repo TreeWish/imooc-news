@@ -1701,11 +1701,17 @@ function normalizeComponent (
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
-var _list = __webpack_require__(/*! ./list.js */ 12); // require() 批量导入
-var _default =
-{
-  getLabel: _list.getLabel };exports.default = _default;
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; // require() 批量导入
+var requireApi = __webpack_require__(98);
+
+
+var _module = {};
+requireApi.keys().forEach(function (key, index) {
+  if (key === './index.js') return;
+  Object.assign(_module, requireApi(key));
+});var _default =
+
+_module;exports.default = _default;
 
 /***/ }),
 
@@ -1717,7 +1723,7 @@ var _default =
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.getLabel = void 0;var _http = _interopRequireDefault(__webpack_require__(/*! ../http.js */ 13));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+Object.defineProperty(exports, "__esModule", { value: true });exports.getList = exports.getLabel = void 0;var _http = _interopRequireDefault(__webpack_require__(/*! ../http.js */ 13));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 
 var getLabel = function getLabel(data) {
   return (0, _http.default)({
@@ -1725,6 +1731,13 @@ var getLabel = function getLabel(data) {
     data: data });
 
 };exports.getLabel = getLabel;
+
+var getList = function getList(data) {
+  return (0, _http.default)({
+    url: 'get_list',
+    data: data });
+
+};exports.getList = getList;
 
 /***/ }),
 
@@ -8787,6 +8800,41 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
   "cloud-download-filled": "\uE8E9",
   "headphones": "\uE8BF",
   "shop": "\uE609" };exports.default = _default;
+
+/***/ }),
+
+/***/ 98:
+/*!***************************************************************!*\
+  !*** F:/TreeWish/imooc-news/utils/api sync nonrecursive .js$ ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"./index.js": 11,
+	"./list.js": 12
+};
+
+
+function webpackContext(req) {
+	var id = webpackContextResolve(req);
+	return __webpack_require__(id);
+}
+function webpackContextResolve(req) {
+	var id = map[req];
+	if(!(id + 1)) { // check for number or string
+		var e = new Error("Cannot find module '" + req + "'");
+		e.code = 'MODULE_NOT_FOUND';
+		throw e;
+	}
+	return id;
+}
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = 98;
 
 /***/ })
 
