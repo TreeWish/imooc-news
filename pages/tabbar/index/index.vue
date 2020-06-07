@@ -38,6 +38,7 @@ export default {
     },
     change(cur) {
       this.tabIndex = cur;
+      this.activeIndex = cur;
 
     }
   }

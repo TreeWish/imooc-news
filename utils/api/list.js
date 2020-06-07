@@ -13,3 +13,15 @@ export const getList = (data) => {
     data
   })
 }
+export const updateLike = (data) => {
+  return http({
+    url: 'update_like',
+    data
+  })
+}
+export const getUser = (data) => {
+  return http({
+    url: 'get_user',
+    data
+  })
+}

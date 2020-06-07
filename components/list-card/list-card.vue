@@ -4,7 +4,10 @@
     <view class="listcard" v-if="item.mode === 'base'">
       <view class="card-img"><image :src="item.cover[0]" mode="aspectFill"></image></view>
       <view class="card-content">
-        <view class="card-title"><text>{{item.title}}</text></view>
+        <view class="card-title">
+          <text>{{item.title}}</text>
+          <likes :item="item"></likes>
+        </view>
         <view class="card-desc">
           <view class="card-label">{{item.classify}}</view>
           <view class="card-reader">{{item.browse_count}}浏览</view>
@@ -14,7 +17,10 @@
     <!-- 多图卡片 -->
     <view class="listcard mode-column" v-if="item.mode === 'column'">
       <view class="card-content">
-        <view class="card-title"><text>{{item.title}}</text></view>
+        <view class="card-title">
+          <text>{{item.title}}</text>
+           <likes :item="item"></likes>
+        </view>
         <view class="card-img">
           <view class="img-item" v-if="index < 3" v-for="(item,index) in item.cover" :key="index"><image :src="item" mode="aspectFill"></image></view>
         </view>
@@ -30,7 +36,10 @@
         <image :src="item.cover[0]" mode="aspectFill"></image>
       </view>
       <view class="card-content">
-        <view class="card-title"><text>{{item.title}}</text></view>
+        <view class="card-title">
+          <text>{{item.title}}</text>
+           <likes :item="item"></likes>
+        </view>
         <view class="card-desc">
           <view class="card-label">{{item.classify}}</view>
           <view class="card-reader">{{item.browse_count}}浏览人数</view>
@@ -76,6 +85,7 @@ export default {
     }
   }
   .card-content {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -86,6 +96,7 @@ export default {
       color: #333;
       font-weight: 400;
       line-height: 1.2;
+      padding-right: 30px;
 
       text {
         overflow: hidden;
@@ -94,6 +105,7 @@ export default {
         -webkit-line-clamp: 2; /*最多显示2行*/
         -webkit-box-orient: vertical;
       }
+     
     }
     .card-desc {
       display: flex;
