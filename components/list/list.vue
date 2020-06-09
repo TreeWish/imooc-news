@@ -42,6 +42,8 @@ export default {
   watch: {
     tab(newVal) {
       if (newVal.length) return;
+      this.listCacheData = {};
+      this.load = {};
       this.getList(this.activeIndex)
     }
   },

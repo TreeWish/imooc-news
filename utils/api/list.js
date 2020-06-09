@@ -31,3 +31,9 @@ export const getSearch = (data) => {
     data
   })
 }
+export const updateLabel = (data) => {
+  return http({
+    url: 'update_label',
+    data
+  })
+}

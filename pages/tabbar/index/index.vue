@@ -22,7 +22,13 @@ export default {
     };
   },
   onLoad() {
-    this.getLabel();
+    uni.$on('labelChange', (res) => {
+      this.labelList = [];
+      this.activeIndex = 0;
+      this.tabIndex = 0;
+      this.getLabel();
+    }) 
+    this.getLabel(); 
   },
   methods: {
     async getLabel() {

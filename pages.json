@@ -3,6 +3,8 @@
 		{
 			"path": "pages/tabbar/index/index",
 			"style": {
+        "navigationStyle": "custom",
+        "navigationBarTextStyle": "white",
 				"navigationBarTitleText": "uni-app"
 			}
 		}
@@ -16,15 +18,23 @@
         }
         ,{
             "path" : "pages/search/search",
-            "style" : {}
+            "style" : {
+               "navigationStyle": "custom"
+            }
+        }
+        ,{
+            "path" : "pages/label/label",
+            "style" : {
+              "navigationBarTextStyle": "black",
+              "navigationBarTitleText": "标签管理"
+            }
         }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
 		"navigationBarTitleText": "uni-app",
 		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8",
-    "navigationStyle": "custom"
+		"backgroundColor": "#F8F8F8"
 	},
   "tabBar": {
     "color": "#666",
