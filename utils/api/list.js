@@ -25,3 +25,9 @@ export const getUser = (data) => {
     data
   })
 }
+export const getSearch = (data) => {
+  return http({
+    url: 'get_search',
+    data
+  })
+}

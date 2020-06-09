@@ -66,9 +66,7 @@ export default {
       } else {
         label = this.tab[current].name
       }
-      let user_id = '5e76254858d922004d6c9cdc'
       const { data } = await this.$api.getList({
-        user_id: user_id,
         name: label,
         page: this.load[current].page,
         pageSize: this.pageSize

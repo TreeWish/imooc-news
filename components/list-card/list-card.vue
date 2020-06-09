@@ -1,5 +1,5 @@
 <template>
-  <view>
+  <view @click="open">
     <!-- 基础卡片 -->
     <view class="listcard" v-if="item.mode === 'base'">
       <view class="card-img"><image :src="item.cover[0]" mode="aspectFill"></image></view>
@@ -61,6 +61,12 @@ export default {
   },
   data() {
     return {};
+  },
+  methods: {
+    open() {
+      const item = this.item
+      this.$emit('click', item)
+    }
   }
 };
 </script>

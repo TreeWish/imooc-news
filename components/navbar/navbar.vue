@@ -4,11 +4,19 @@
       <!-- 状态栏 -->
       <view :style="{ height: statusBarHeight + 'px' }"></view>
       <!-- 导航栏内容 -->
-      <view>
-        <view class="navbar-content" :style="{ width: widowWidth + 'px', height: navBarHeight }">
-          <view class="nav-search">
+      <view @click.stop="toSearch">
+        <view class="navbar-content" :class="{search:isSearch}"
+        :style="{ width: widowWidth + 'px', height: navBarHeight }">
+          <view v-if="isSearch" class="search-icons" @click="back">
+            <uni-icons type="back" size="22" color="#fff"></uni-icons>
+          </view>
+          <view v-if="!isSearch" class="nav-search">
             <view class="nav-search-icons"><uni-icons type="search" size="16" color="#999"></uni-icons></view>
             <view class="nav-search-text">uni vue react</view>
+          </view>
+          <view v-else class="nav-search">
+            <input type="text" v-model="val" class="nav-search-text"
+            placeholder="请输入您要搜索的内容" @input="inputChange">
           </view>
         </view>
       </view>
@@ -19,12 +27,28 @@
 
 <script>
 export default {
+  props: {
+    value: {
+      type: [String, Number],
+      default: ''
+    },
+    isSearch: {
+      type: Boolean,
+      default: false
+    }
+  },
   data() {
     return {
       statusBarHeight: 20,
       navBarHeight: 45,
-      widowWidth: 375
+      widowWidth: 375,
+      val: ''
     };
+  },
+  watch: {
+    value(newVal){
+    	this.val = newVal
+    }
   },
   created() {
     // 获取设备系统信息
@@ -39,6 +63,25 @@ export default {
     this.navBarHeight = menuBtnInfo.top - info.statusBarHeight + (menuBtnInfo.bottom - info.statusBarHeight);
     this.widowWidth = menuBtnInfo.left;
     // #endif
+  },
+  methods: {
+    toSearch() {
+      if (this.isSearch) return
+      uni.navigateTo({
+        url: "/pages/search/search"
+      })
+    },
+    back() {
+      // uni.navigateBack()
+      uni.switchTab({
+        url:'/pages/tabbar/index/index'
+      })
+    },
+    inputChange(e) {
+      const { value } = e.detail
+      this.$emit('input', value)
+    }
+    
   }
 };
 </script>
@@ -79,7 +122,20 @@ export default {
           color: #999;
         }
       }
+      &.search {
+        padding-left: 0;
+        .search-icons {
+          margin:0 10px;
+        }
+        .nav-search {
+					border-radius: 5px;
+          .nav-search-text {
+            padding-left: 10px;
+          }
+				}
+      }
     }
+
   }
 }
 </style>
