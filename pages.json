@@ -29,9 +29,16 @@
               "navigationBarTitleText": "标签管理"
             }
         }
+        ,{
+            "path" : "pages/detail/detail",
+            "style" : {
+              "navigationBarTextStyle": "black",
+              "navigationBarTitleText": "文章详情"
+            }
+        }
     ],
 	"globalStyle": {
-		"navigationBarTextStyle": "white",
+		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#F8F8F8"

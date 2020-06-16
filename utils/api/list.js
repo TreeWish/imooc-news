@@ -37,3 +37,15 @@ export const updateLabel = (data) => {
     data
   })
 }
+export const getDetail = (data) => {
+  return http({
+    url: 'get_detail',
+    data
+  })
+}
+export const updateComment = (data) => {
+  return http({
+    url: 'update_comment',
+    data
+  })
+}
