@@ -2,5 +2,8 @@
 {
 	"user_id": "5ed5b51d770027004c4cbe8a",
 	"article_id": "5ed5b51a7b07f6004d6f8154",
-	"content": "子回复成功"
+  "comment_id": "6x1k20wx6dk0",
+  "reply_id": "50vcaznxjcg0",
+  "is_reply": true,
+	"content": "test子回复成功"
 }

@@ -43,7 +43,6 @@
           article_id: this.item._id
         });
         this.item["islike"] = 'like';
-      console.log(this.item.islike);
         uni.hideLoading();
         uni.showToast({
           title: this.like ? '收藏成功' : '取消收藏',

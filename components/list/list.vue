@@ -38,6 +38,11 @@ export default {
   created() {
     //if (this.tab.length) return;
     this.getList(this.activeIndex);
+    uni.$on('updateLike', ()=>{
+      this.listCacheData = {}
+      this.load = {}
+      this.getList(this.activeIndex)
+    })
   },
   watch: {
     tab(newVal) {

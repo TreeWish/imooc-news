@@ -49,3 +49,21 @@ export const updateComment = (data) => {
     data
   })
 }
+export const getComment = (data) => {
+  return http({
+    url: 'get_comment',
+    data
+  })
+}
+export const updateAuthor = (data) => {
+  return http({
+    url: 'update_author',
+    data
+  })
+}
+export const updateUp = (data) => {
+  return http({
+    url: 'update_up',
+    data
+  })
+}
