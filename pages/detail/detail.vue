@@ -35,7 +35,7 @@
        <uni-icons type="compose" size="16" color="#F07373"></uni-icons>
       </view>
       <view class="bottom-icons">
-        <view class="icons-box">
+        <view class="icons-box" @click="detailComment">
           <uni-icons type="chat" size="22" color="#F07373"></uni-icons>
         </view>
         <view class="icons-box" @click="likeTap">
@@ -188,6 +188,11 @@
         this.formData.is_thumbs_up = true;
         this.getDetail();
       },
+      detailComment(article_id) {
+        uni.navigateTo({
+          url: '/pages/comments/comments?id='+this.formData._id
+        })
+      }
       
       
       

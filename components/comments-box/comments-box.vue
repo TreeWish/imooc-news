@@ -9,7 +9,7 @@
           {{comments.to}}
         </view>
         <view v-else class="title">{{ comments.author.author_name }}</view>
-        <view>{{ comments.create_time }}</view>
+        <view>{{ comments.create_time | dateFormat }}</view>
       </view>
     </view>
     <view class="comments-content">
@@ -26,6 +26,7 @@
 
 <script>
 import commentsBox from '@/components/comments-box/comments-box.vue'
+import {parceTime} from '@/utils/time.js' 
 export default {
   name: 'comments-box',
   components: {
@@ -41,6 +42,11 @@ export default {
     replys: {
       type: Boolean,
       default: false
+    }
+  },
+  filters: {
+    dateFormat(time) {
+      return parceTime(time);
     }
   },
   data() {

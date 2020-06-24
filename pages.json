@@ -14,7 +14,10 @@
         }
         ,{
             "path" : "pages/tabbar/follow/follow",
-            "style" : {}
+            "style" : {
+              "navigationBarTextStyle": "black",
+              "navigationBarTitleText": "关注"
+            }
         }
         ,{
             "path" : "pages/search/search",
@@ -34,6 +37,12 @@
             "style" : {
               "navigationBarTextStyle": "black",
               "navigationBarTitleText": "文章详情"
+            }
+        }
+        ,{
+            "path" : "pages/comments/comments",
+            "style" : {
+              "navigationBarTitleText": "评论详情"
             }
         }
     ],
