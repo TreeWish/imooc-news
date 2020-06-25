@@ -67,3 +67,15 @@ export const updateUp = (data) => {
     data
   })
 }
+export const getFollow = (data) => {
+  return http({
+    url: 'get_follow',
+    data
+  })
+}
+export const getAuthor = (data) => {
+  return http({
+    url: 'get_author',
+    data
+  })
+}

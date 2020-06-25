@@ -19,8 +19,7 @@
     </view>
     <view class="detail-content">
       <view class="detail-html">
-        <!-- <uparse :content="formData.content" :noData="noData"></uparse> -->
-        内容
+        <uparse :content="formData.content" :noData="noData"></uparse>
       </view>
       <view class="detail-comment">
         <view class="comment-title">最新评论</view>
@@ -46,20 +45,7 @@
         </view>
       </view>
     </view>
-    <view>
-      <uni-popup ref="popup" type="bottom" :maskClick="false">
-        <view class="popup-wrap">
-          <view class="popup-header">
-            <text class="popup-header__item" @click="close">取消 </text>
-            <text class="popup-header__item" @click="submit">发布 </text>
-          </view>
-          <view class="popup-content">
-            <textarea class="popup-textarea" v-model="commentsValue" maxlength="200" fixed placeholder="请输入评论内容" />
-            <view class="popup-count">{{commentsValue.length}}/200</view>
-          </view>
-        </view>
-      </uni-popup>
-    </view>
+    <release ref="popup" @submit="submit"></release>
   </view>
 
 </template>
@@ -97,12 +83,6 @@
         });
         this.commentList = data;
       },
-      openPopup() {
-        this.$refs.popup.open();
-      },
-      submit() {
-        this.updateComment({content:this.commentsValue, ...this.replyFormData});
-      },
       async updateComment(content) {
         const formData = {
          article_id: this.formData._id,
@@ -118,6 +98,14 @@
         this.close();
         this.replyFormData = {};
         this.commentsValue = '';
+      },
+      openPopup() {
+        // 打开窗口之前清空内容 
+        this.commentsValue = '';
+        this.$refs.popup.open();
+      },
+      submit(content) {
+        this.updateComment({content, ...this.replyFormData})
       },
       close() {
         this.$refs.popup.close();
@@ -135,7 +123,6 @@
       },
       // 关注作者
       follow() {
-        console.log('follow');
         this.updateAuthor();
       },
       async updateAuthor() {
@@ -193,9 +180,6 @@
           url: '/pages/comments/comments?id='+this.formData._id
         })
       }
-      
-      
-      
 		}
 	}
 </script>
@@ -318,36 +302,5 @@
       }
     }
   }
-  .popup-wrap {
-    background-color: #fff;
-    .popup-header {
-      display: flex;
-      justify-content: space-between;
-      font-size: 14px;
-      color: #666;
-      border-bottom: 1px #F5F5F5 solid;
-      .popup-header__item {
-        height: 50px;
-        line-height: 50px;
-        padding: 0 15px;
-      }
-    }
-    .popup-content {
-
-      margin-top: 20px;
-      padding: 0 15px;
-      width: 100%;
-      box-sizing: border-box;
-      textarea {
-        width: 100%;
-        height: 200px;
-      }
-      .popup-count {
-        display: flex;
-        justify-content: flex-end;
-        font-size: 12px;
-        color: #999;
-      }
-    }
-  }
+  
 </style>
