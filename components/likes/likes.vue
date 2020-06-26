@@ -48,6 +48,7 @@
           title: this.like ? '收藏成功' : '取消收藏',
           icon: 'none'
         })
+        uni.$emit('updateLike',this.types)
       },
      
     }

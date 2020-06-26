@@ -2,15 +2,19 @@
   "pages": [
     "pages/tabbar/index/index",
     "pages/tabbar/my/my",
-    "pages/tabbar/follow/follow"
+    "pages/tabbar/follow/follow",
+    "pages/search/search",
+    "pages/label/label",
+    "pages/detail/detail",
+    "pages/comments/comments",
+    "pages/my-article/my-article"
   ],
   "subPackages": [],
   "window": {
-    "navigationBarTextStyle": "white",
+    "navigationBarTextStyle": "black",
     "navigationBarTitleText": "uni-app",
     "navigationBarBackgroundColor": "#F8F8F8",
-    "backgroundColor": "#F8F8F8",
-    "navigationStyle": "custom"
+    "backgroundColor": "#F8F8F8"
   },
   "tabBar": {
     "color": "#666",

@@ -79,3 +79,9 @@ export const getAuthor = (data) => {
     data
   })
 }
+export const getMyArticle = (data) => {
+  return http({
+    url: 'get_my_article',
+    data
+  })
+}

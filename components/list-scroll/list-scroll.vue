@@ -1,6 +1,6 @@
 <template>
   <view class="scroll">
-    <scroll-view scroll-y class="scroll-list" @scrolltolower="loadmore">
+    <scroll-view scroll-y class="scroll-list" @scrolltolower="loadmore" show-scrollbar>
       <view>
         <slot></slot>
       </view>
@@ -22,7 +22,9 @@ export default {
 </script>
 
 <style lang="scss">
+
 .scroll {
+  height: 100%;
   flex: 1;
   box-sizing: border-box;
   overflow: hidden;

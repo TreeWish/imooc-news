@@ -1,0 +1,1 @@
+<view><block wx:if="{{list.length===0}}"><uni-load-more vue-id="511e0da0-1" iconType="snow" status="loading" bind:__l="__l"></uni-load-more></block><block wx:for="{{list}}" wx:for-item="item" wx:for-index="__i0__" wx:key="_id"><list-card vue-id="{{'511e0da0-2-'+__i0__}}" types="follow" item="{{item}}" bind:__l="__l"></list-card></block></view>

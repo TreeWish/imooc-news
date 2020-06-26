@@ -25,6 +25,7 @@
 /* 透明度 */
 /* 文章场景相关 */
 .scroll {
+  height: 100%;
   -webkit-box-flex: 1;
   -webkit-flex: 1;
           flex: 1;

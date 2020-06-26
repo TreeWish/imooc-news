@@ -47,6 +47,7 @@
   height: 100%;
 }
 .listcard .card-content {
+  position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -65,6 +66,7 @@
   color: #333;
   font-weight: 400;
   line-height: 1.2;
+  padding-right: 30px;
 }
 .listcard .card-content .card-title text {
   overflow: hidden;

@@ -67,4 +67,16 @@
   font-size: 14px;
   color: #999;
 }
+.navbar .navbar-fixed .navbar-content.search {
+  padding-left: 0;
+}
+.navbar .navbar-fixed .navbar-content.search .search-icons {
+  margin: 0 10px;
+}
+.navbar .navbar-fixed .navbar-content.search .nav-search {
+  border-radius: 5px;
+}
+.navbar .navbar-fixed .navbar-content.search .nav-search .nav-search-text {
+  padding-left: 10px;
+}
 

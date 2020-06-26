@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "评论详情",
+  "usingComponents": {
+    "comments-box": "/components/comments-box/comments-box",
+    "uni-load-more": "/components/uni-load-more/uni-load-more",
+    "release": "/components/release/release"
+  }
+}

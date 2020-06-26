@@ -7,7 +7,7 @@
     "urlCheck": false
   },
   "compileType": "miniprogram",
-  "libVersion": "2.9.2",
+  "libVersion": "",
   "appid": "touristappid",
   "projectname": "imooc-news",
   "condition": {

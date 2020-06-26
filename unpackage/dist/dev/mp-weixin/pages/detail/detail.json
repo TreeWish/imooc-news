@@ -1,0 +1,10 @@
+{
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "手记详情",
+  "usingComponents": {
+    "comments-box": "/components/comments-box/comments-box",
+    "uni-icons": "/components/uni-icons/uni-icons",
+    "release": "/components/release/release",
+    "uparse": "/components/gaoyia-parse/parse"
+  }
+}

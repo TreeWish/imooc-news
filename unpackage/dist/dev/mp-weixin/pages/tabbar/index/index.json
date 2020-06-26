@@ -1,5 +1,7 @@
 {
-  "navigationBarTitleText": "uni-app",
+  "navigationStyle": "custom",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "小慕手记",
   "usingComponents": {
     "navbar": "/components/navbar/navbar",
     "tab": "/components/tab/tab",

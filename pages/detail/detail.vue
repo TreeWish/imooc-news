@@ -124,6 +124,7 @@
       // 关注作者
       follow() {
         this.updateAuthor();
+       
       },
       async updateAuthor() {
         uni.showLoading();
@@ -136,6 +137,7 @@
           title: this.formData.is_author_like?'关注作者成功':'取消关注作者',
           icon:'none'
         })
+        uni.$emit('updateFollow', 'follow');
       },
       // 收藏文章
       likeTap() {

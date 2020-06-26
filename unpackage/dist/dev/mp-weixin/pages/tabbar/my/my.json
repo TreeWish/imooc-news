@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "navigationBarTitleText": "我的",
+  "usingComponents": {
+    "uni-icons": "/components/uni-icons/uni-icons"
+  }
 }

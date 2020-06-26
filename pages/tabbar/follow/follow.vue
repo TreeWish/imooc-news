@@ -41,8 +41,11 @@
 		},
     onLoad() {
       uni.$on('updateLike', () => {
-         this.getFollow();
+        this.getFollow();
       })
+      uni.$on('updateFollow', () => {
+				this.getAuthor();
+			})
       this.getFollow();
       this.getAuthor();
     },
